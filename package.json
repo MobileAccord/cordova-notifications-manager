@@ -1,0 +1,25 @@
+{
+  "name": "NotificationsManager",
+  "version": "0.0.1",
+  "description": "Cordova plugin that checks whether push Notifications for the app has been enabled/disabled through settings",
+  "cordova": {
+    "id": "cordova-plugin-notifications-manager",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koros/cordova-notifications-manager.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Geoffrey Koros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koros/cordova-notifications-manager/issues"
+  },
+  "homepage": "https://github.com/koros/cordova-notifications-manager#readme"
+}
