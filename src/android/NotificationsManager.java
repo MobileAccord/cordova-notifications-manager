@@ -7,6 +7,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.AppOpsManager;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import android.app.AppOpsManager;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -40,8 +55,8 @@ public class NotificationsManager extends CordovaPlugin {
             appOpsClass = Class.forName(AppOpsManager.class.getName());
             Method checkOpNoThrowMethod = appOpsClass.getMethod(CHECK_OP_NO_THROW, Integer.TYPE, Integer.TYPE, String.class);
             Field opPostNotificationValue = appOpsClass.getDeclaredField(OP_POST_NOTIFICATION);
-            int value = (int)opPostNotificationValue.get(Integer.class);
-            boolean enabled = ((int)checkOpNoThrowMethod.invoke(mAppOps,value, uid, pkg) == AppOpsManager.MODE_ALLOWED);
+            int value = (Integer)opPostNotificationValue.get(Integer.class);
+            boolean enabled = ((Integer)checkOpNoThrowMethod.invoke(mAppOps,value, uid, pkg) == AppOpsManager.MODE_ALLOWED);
             callbackContext.success(String.valueOf(enabled));
 
         } catch (Exception e) {
