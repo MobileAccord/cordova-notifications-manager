@@ -42,13 +42,13 @@ public class NotificationsManager extends CordovaPlugin {
             Field opPostNotificationValue = appOpsClass.getDeclaredField(OP_POST_NOTIFICATION);
             int value = (int)opPostNotificationValue.get(Integer.class);
             boolean enabled = ((int)checkOpNoThrowMethod.invoke(mAppOps,value, uid, pkg) == AppOpsManager.MODE_ALLOWED);
-            callbackContext.success(enabled);
+            callbackContext.success(String.valueOf(enabled));
 
         } catch (Exception e) {
             e.printStackTrace();
             callbackContext.error(e.getMessage());
         }
 
-        callbackContext.success(false);
+        callbackContext.success(String.valueOf(false));
     }
 }
