@@ -22,6 +22,8 @@ import android.content.pm.ApplicationInfo;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+import android.util.Log;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -29,10 +31,11 @@ public class NotificationsManager extends CordovaPlugin {
 
     private static final String CHECK_OP_NO_THROW = "checkOpNoThrow";
     private static final String OP_POST_NOTIFICATION = "OP_POST_NOTIFICATION";
-    private Context mContext = this.cordova.getActivity().getApplicationContext();
+    private static final String LOG_TAG = "NotificationsManager";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        Log.i(LOG_TAG, "execute");
         if (action.equals("isNotificationEnabled")) {
             this.isNotificationEnabled(callbackContext);
             return true;
@@ -45,6 +48,8 @@ public class NotificationsManager extends CordovaPlugin {
      * @return
      */
     public void isNotificationEnabled(CallbackContext callbackContext) {
+        Log.i(LOG_TAG, "isNotificationEnabled");
+        Context mContext = this.cordova.getActivity().getApplicationContext();
         AppOpsManager mAppOps = (AppOpsManager) mContext.getSystemService(Context.APP_OPS_SERVICE);
         ApplicationInfo appInfo = mContext.getApplicationInfo();
         String pkg = mContext.getApplicationContext().getPackageName();
