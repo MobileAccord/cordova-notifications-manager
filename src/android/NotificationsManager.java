@@ -1,4 +1,4 @@
-package cordova-plugin-notifications-manager;
+package cordova.plugin.notificationsmanager;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
