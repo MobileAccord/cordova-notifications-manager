@@ -1,4 +1,4 @@
-package cordova.plugin.notificationsmanager;
+package com.mobileaccord.geopoll.plugins;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -66,7 +66,7 @@ public class NotificationsManager extends CordovaPlugin {
 
         } catch (Exception e) {
             e.printStackTrace();
-            callbackContext.error(e.getMessage());
+            callbackContext.error(e.toString());
         }
 
         callbackContext.success(String.valueOf(false));
