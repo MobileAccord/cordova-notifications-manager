@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koros/cordova-notifications-manager.git"
+    "url": "git+https://github.com/MobileAccord/cordova-notifications-manager.git"
   },
   "keywords": [
     "ecosystem:cordova",
@@ -19,7 +19,7 @@
   "author": "Geoffrey Koros",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/koros/cordova-notifications-manager/issues"
+    "url": "https://github.com/MobileAccord/cordova-notifications-manager/issues"
   },
-  "homepage": "https://github.com/koros/cordova-notifications-manager#readme"
+  "homepage": "https://github.com/MobileAccord/cordova-notifications-manager#readme"
 }
